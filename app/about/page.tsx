@@ -1,7 +1,12 @@
-import React from 'react';
+import Heading from '@/components/Heading';
 
 const AboutPage = () => {
-    return <div>About Page</div>;
+    return (
+        <>
+            <Heading>About Page</Heading>
+            <p>This is the about page</p>
+        </>
+    );
 };
 
 export default AboutPage;

@@ -4,20 +4,29 @@ export default function SavingsPage() {
     return (
         <>
             <ul className='flex flex-col gap-3'>
-                <li className='bg-white border rounded shadow w-80 hover:shadow-xl'>
+                <li className='bg-white border rounded w-80 shadow hover:shadow-xl'>
                     <Link href='/savings/stuff'>
-                        <h2 className='py-1 text-center'>Stuff</h2>
                         <img
-                            src='/images/hellblade.jpg'
-                            alt='Hell Blade'
-                            width='640'
-                            height='360'
-                            className='mb-2 rounded-t'
+                            src='/images/hollow-knight.jpg'
+                            alt='Hollow Knight'
+                            width='320'
+                            height='180'
+                            className='rounded-t mb-2'
                         />
+                        <h2 className='py-1 text-center font-semibold'>Stuff</h2>
                     </Link>
                 </li>
-                <li className='bg-white border rounded shadow w-80 hover:shadow-xl'>
-                    <Link href='/savings/things'>Things</Link>
+                <li className='bg-white border rounded w-80 shadow hover:shadow-xl'>
+                    <Link href='/savings/things'>
+                        <img
+                            src='/images/stardew-valley.jpg'
+                            alt='Stardew Valley'
+                            width='320'
+                            height='180'
+                            className='rounded-t mb-2'
+                        />
+                        <h2 className='py-1 text-center font-semibold'>Things</h2>
+                    </Link>
                 </li>
             </ul>
         </>

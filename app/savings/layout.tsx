@@ -5,12 +5,7 @@ interface LayoutProps {
 }
 
 const SavingsLayout = ({ children }: LayoutProps) => {
-    return (
-        <div style={{ display: 'flex' }}>
-            <div style={{ border: 'solid red 1px' }}>[Savings menubar]</div>
-            {children}
-        </div>
-    );
+    return <div>{children}</div>;
 };
 
 export default SavingsLayout;

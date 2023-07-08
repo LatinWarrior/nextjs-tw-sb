@@ -1,7 +1,9 @@
-import './globals.css';
 import type { Metadata } from 'next';
 import { roboto, exo2 } from '@/app/fonts';
 import { ReactNode } from 'react';
+import NavBar from '@/components/NavBar';
+
+import './globals.css';
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -14,25 +16,15 @@ interface LayoutProps {
 
 export default function RootLayout({ children }: LayoutProps) {
     return (
-        <html lang='en' className={`${exo2.variable} ${roboto.variable}`}>
-            <body className='font-exo2'>
+        <html lang='en' className={`${roboto.variable} ${exo2.variable} `}>
+            <body className='font-roboto bg-orange-50 flex flex-col px-4 py-2 min-h-screen'>
                 <header>
-                    <ul>
-                        <li>
-                            <a href='/'>Home</a>
-                        </li>
-                        <li>
-                            <a href='/savings'>Savings</a>
-                        </li>
-                        <li>
-                            <a href='/about'>About</a>
-                        </li>
-                    </ul>
+                    <NavBar />
                 </header>
-                <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-                    {children}
-                </main>
-                <footer>[Footer]</footer>
+                <main className='grow py-3'>{children}</main>
+                <footer className='border-t py-3 text-center text-xs'>
+                    Data and images courtesy of Stuff and Things...
+                </footer>
             </body>
         </html>
     );
