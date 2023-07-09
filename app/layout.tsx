@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps) {
                     <NavBar />
                 </header>
                 <main className='grow py-3'>{children}</main>
-                <footer className='border-t py-3 text-center text-xs'>
+                <footer className='border-t py-3 text-center text-xs text-slate-500'>
                     Data and images courtesy of Stuff and Things...
                 </footer>
             </body>

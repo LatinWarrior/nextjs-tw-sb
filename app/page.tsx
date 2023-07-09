@@ -8,7 +8,7 @@ export default function HomePage() {
             <p className='pb-3'>We know Stuff and Things</p>
             <div className='bg-white border rounded w-80 sm:w-full shadow sm:shadow-none hover:shadow-xl'>
                 <Link
-                    href='/savings/things'
+                    href='/savings/stardew-valley'
                     className='flex flex-col sm:flex-row'>
                     <img
                         src='/images/stardew-valley.jpg'
