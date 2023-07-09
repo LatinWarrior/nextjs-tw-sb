@@ -1,8 +1,22 @@
 import Heading from '@/components/Heading';
-import { getReview } from '@/lib/reviews';
+import { getReview, getSlugs } from '@/lib/reviews';
 
-const HollowKnightPage = async () => {
-    const review = await getReview('hollow-knight');
+interface ReviewPageParams {
+    slug: string;
+}
+
+interface ReviewPageProps {
+    params: ReviewPageParams;
+}
+
+export async function generateStaticParams() {
+    const slugs = await getSlugs();
+    return slugs.map((slug) => ({ slug }));
+}
+
+const ReviewPage = async ({ params: { slug } }: ReviewPageProps) => {
+    // console.log(`[ReviewPage] props`, props);
+    const review = await getReview(slug);
     return (
         <>
             <Heading>{review.title}</Heading>
@@ -22,4 +36,4 @@ const HollowKnightPage = async () => {
     );
 };
 
-export default HollowKnightPage;
+export default ReviewPage;

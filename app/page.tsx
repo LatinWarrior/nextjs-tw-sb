@@ -1,24 +1,28 @@
 import Heading from '@/components/Heading';
+import { getFeaturedReview } from '@/lib/reviews';
 import Link from 'next/link';
 
-export default function HomePage() {
+export default async function HomePage() {
+    const review = await getFeaturedReview('stardew-valley');
+
     return (
         <>
             <Heading>Home Page</Heading>
-            <p className='pb-3'>We know Stuff and Things</p>
+            <p className='pb-3'>Featured Review</p>
             <div className='bg-white border rounded w-80 sm:w-full shadow sm:shadow-none hover:shadow-xl'>
                 <Link
-                    href='/savings/stardew-valley'
+                    key={review.slug}
+                    href={`/savings/${review.slug}`}
                     className='flex flex-col sm:flex-row'>
                     <img
-                        src='/images/stardew-valley.jpg'
-                        alt='Stardew Valley'
+                        src={review.image}
+                        alt={review.title}
                         width='320'
                         height='180'
                         className='rounded-t sm:rounded-l sm:rounded-r-none'
                     />
-                    <h2 className='py-1 text-center font-semibold sm:px-2'>
-                        Things
+                    <h2 className='py-1 text-center font-semibold'>
+                        {review.title}
                     </h2>
                 </Link>
             </div>
